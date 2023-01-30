@@ -1,0 +1,80 @@
+@startuml diagram_of_components
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container_Ext(internet, "Internet")
+Boundary(github, "Github") {
+  Container_Ext(repo, "Cluster repository")
+  Container_Ext(actions, "CI", "Github Actions")
+}
+
+Boundary(confluent, "Confluent") {
+  ContainerQueue_Ext(kafka, "Kafka", "ACL per team and SASL authentication")
+}
+
+Boundary(atlas, "MongoDB Atlas") {
+  ContainerDb_Ext(mongo, "Mongo DB")
+}
+
+Boundary(elasticcloud, "Elastic Cloud") {
+  Container_Ext(elastic, "Elasticsearch")
+  Container_Ext(kibana, "Kibana")
+  Container_Ext(elastic, "Elasticsearch")
+}
+
+Enterprise_Boundary(cencosud, "Cencosud Network") {
+  Boundary(gcp, "GCP") {
+    Container(cloudbuild, "Builder", "Google Cloud Build")
+    Container(gkelb, "GCKE load balancer with internet exposure and Cloud Armor protection")
+    ContainerDb(nosql, "NoSQL", "Redis in memory")
+    ContainerDb(sql, "SQL", "MySQL or PostgreSQL")
+    ContainerQueue(pubsub, "PubSub", "Google Cloud PubSub")
+
+    Container_Boundary(gke, "Environment Cluster") {
+      Container(apigateway, "API gateway", "Kong")
+      Container(flux, "GitOps Agent", "Flux")
+      Container(vaultagent, "Vault Agent", "Secret manager")
+
+      System(arcus, "Arcus", "CencosudX product")
+      System(pactolus, "Pactolus", "CencosudX product")
+      System(pim, "PIM", "CencosudX product")
+      System(janus, "Janus", "CencosudX product")
+    }
+
+    Container_Boundary(gkevault, "Vault Cluster") {
+      Container(vault, "Secret Management", "Hashicorp Vault")
+    }
+  }
+
+  Boundary(aws, "AWS") {
+    Container_Ext(services, "AWS Services")
+  }
+
+  Boundary(onprem, "OnPrem") {
+    Container_Ext(servers, "servers")
+  }
+}
+
+Rel_D(repo, flux, "GitOps")
+Rel_D(actions, cloudbuild, "Docker image building")
+BiRel(vault, github, "https and key auth")
+BiRel(vaultagent, vault, "https with service account auth")
+
+Rel(internet, gkelb, "Uses", "https")
+Rel(gkelb, apigateway, "Through")
+Rel(apigateway, arcus, "Route to")
+Rel(apigateway, pactolus, "Route to")
+Rel(apigateway, pim, "Route to")
+Rel(apigateway, janus, "Route to")
+
+Rel_R(gke, sql, "Internal access and service account auth")
+Rel_R(gke, nosql, "Internal access and service account auth")
+Rel_R(gke, pubsub, "Internal access and service account auth")
+
+Rel(gke, aws, "")
+Rel(gke, onprem, "")
+Rel(gke, confluent, "Internet connection")
+Rel(gke, mongo, "Internet connection")
+Rel(gke, elastic, "Internet connection")
+
+@enduml

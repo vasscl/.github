@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: handbook
+  title: Core Handbooks
+  description: This document is a list of collaborative guides where each area describes how they work, their principles, and highlight guidelines.
+  annotations:
+    backstage.io/techdocs-ref: dir:./
+    github.com/project-slug: Cencosud-X/handbooks
+  tags:
+    - documentation
+    - guidelines
+    - handbook
+spec:
+  type: website
+  lifecycle: production
+  owner: cencosudx

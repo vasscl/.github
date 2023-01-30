@@ -1,0 +1,24 @@
+site_name: Core Handbook
+nav:
+  - Home: index.md
+  - Community: community/index.md
+  - Data team: datateam/index.md
+  - Platform team:
+    - Home: platformteam/index.md
+    - Documentation definitions: platformteam/documentation.md
+    - Security definitions: platformteam/security.md
+    - Multi cloud strategy: platformteam/multi-cloud.md
+    - Reference architecture:
+      - Home: platformteam/reference-architecture/index.md
+      - Supported stack: platformteam/reference-architecture/stack.md
+      - Event strategy: platformteam/reference-architecture/events-and-commands.md
+      - Micro-services strategy: platformteam/reference-architecture/micro-services-and-agents.md
+      - Real time strategy: platformteam/reference-architecture/real-time.md
+      - Monorepo strategy: platformteam/reference-architecture/monorepo.md
+      - Telemetry strategy: platformteam/reference-architecture/telemetry.md
+      - HA strategy: platformteam/reference-architecture/high-availability.md
+    - Resources: platformteam/resources/index.md
+plugins:
+  - techdocs-core
+  - kroki
+repo_url: https://github.com/Cencosud-X/handbooks
