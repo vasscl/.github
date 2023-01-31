@@ -2,11 +2,12 @@ name: Publish TechDocs Site
 
 on:
   push:
-    branches: [main]
+    branches:
+      - release
     paths:
-      - "docs/**"
-      - "mkdocs.yml"
-      - ".github/workflows/techdocs-publish-staging.yaml"
+       - "docs/**"
+       - "mkdocs.yml"
+       - ".github/workflows/techdocs-publish-staging.yaml"
 
   workflow_dispatch:
 
