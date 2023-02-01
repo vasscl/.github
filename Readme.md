@@ -1,6 +1,6 @@
 # Handbooks
 
-<!--- Explore Cencosud X core handbooks at https://portal.cencosudx.io -->
+<!--- Explore Cencosud X core handbooks at https://portal.vasscl.io -->
 
 ## Translate
 

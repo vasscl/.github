@@ -53,8 +53,8 @@ You need [install Vault](https://www.vaultproject.io/). Vault is connected to ou
 With your personal token you can log in to vault:
 
 ```shell
-export VAULT_ADDR=https://vault.cencosudx.xyz
-vault login -method=github -path=github/cencosudx token="<YOUR-PERSONAL-TOKEN>"
+export VAULT_ADDR=https://vault.vasscl.xyz
+vault login -method=github -path=github/vasscl token="<YOUR-PERSONAL-TOKEN>"
 ```
 
 ### Connect from a cluster

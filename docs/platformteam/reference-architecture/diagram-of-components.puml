@@ -35,10 +35,10 @@ Enterprise_Boundary(cencosud, "Cencosud Network") {
       Container(flux, "GitOps Agent", "Flux")
       Container(vaultagent, "Vault Agent", "Secret manager")
 
-      System(arcus, "Arcus", "CencosudX product")
-      System(pactolus, "Pactolus", "CencosudX product")
-      System(pim, "PIM", "CencosudX product")
-      System(janus, "Janus", "CencosudX product")
+      System(arcus, "Arcus", "vasscl product")
+      System(pactolus, "Pactolus", "vasscl product")
+      System(pim, "PIM", "vasscl product")
+      System(janus, "Janus", "vasscl product")
     }
 
     Container_Boundary(gkevault, "Vault Cluster") {

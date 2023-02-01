@@ -92,7 +92,7 @@ replicas: 1
 
       containers:
         - name: my-app
-          image: us.gcr.io/cencosudx/my-app:latest
+          image: us.gcr.io/vasscl/my-app:latest
           volumeMounts:
             - name: env-config
               mountPath: /home/app/config

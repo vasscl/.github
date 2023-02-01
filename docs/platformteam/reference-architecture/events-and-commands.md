@@ -16,12 +16,12 @@ An event has typically multiple consumers, but a command is addressed to only on
 
 Overall, commands encourage and are using on orchestration models and events on choreography models. Both are complementary, but events are fundamental because allow integration on distributed systems and support behaviors not yet considered.
 
-A Event is immutable (persists), related with an entity and have an order that compose a stream that represents an entity related behavior behavior. The concept of order and stream is supported for few tools. Commands do not need order and also do not compose a stream. also persistence is not needed as far the delivery is guaranteed. Taking this on account, the next technologies are supported on CencosudX:
+A Event is immutable (persists), related with an entity and have an order that compose a stream that represents an entity related behavior behavior. The concept of order and stream is supported for few tools. Commands do not need order and also do not compose a stream. also persistence is not needed as far the delivery is guaranteed. Taking this on account, the next technologies are supported on vasscl:
 
 - Events: Kafka is mandatory
 - Commands: The pub/sub pattern is enough and Kafka is supported as well GCP pub/sub.
 
-> Kafka is an overkill to just implement pub/sub and commands, but giving that CencosudX use a managed solution, is the preferred solution due tha is OSS and supported on all clouds. Pub/Sub should be justify, for example, when its native integration with GCP services is useful.
+> Kafka is an overkill to just implement pub/sub and commands, but giving that vasscl use a managed solution, is the preferred solution due tha is OSS and supported on all clouds. Pub/Sub should be justify, for example, when its native integration with GCP services is useful.
 
 #### Transactional Events topics
 

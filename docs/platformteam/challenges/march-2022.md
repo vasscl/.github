@@ -39,27 +39,27 @@ To list the available images on our repository you have to:
 Set the project
 
 ```shell
-gcloud config set project cencosudx
+gcloud config set project vasscl
 ```
 
 List images on golden or build
 
 ```shell
-gcloud container images list --repository us.gcr.io/cencosudx/golden
+gcloud container images list --repository us.gcr.io/vasscl/golden
 ... or
-gcloud container images list --repository us.gcr.io/cencosudx/build
+gcloud container images list --repository us.gcr.io/vasscl/build
 ```
 
 Inspect available tags, replace <IMAGE-NAME> for the name of the image you want to inspect
 
 ```shell
-gcloud container images list-tags us.gcr.io/cencosudx/golden/<IMAGE-NAME>
+gcloud container images list-tags us.gcr.io/vasscl/golden/<IMAGE-NAME>
 ```
 
 You have to see something like this
 
 ```shell
-gcloud container images list-tags us.gcr.io/cencosudx/golden/node
+gcloud container images list-tags us.gcr.io/vasscl/golden/node
 DIGEST        TAGS                                                                         TIMESTAMP
 78e68a7ce93a  v14                                                                          1969-12-31T21:00:00
 ce679ba6634d  v16                                                                          1969-12-31T21:00:00

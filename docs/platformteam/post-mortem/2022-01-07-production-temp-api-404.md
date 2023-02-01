@@ -17,7 +17,7 @@
 
 ### Summary
 
-Aproximadamente a las 12:00 AM todas las API's del cluster **production-temp** bajo el dominio **api.cencosudx.io** comenzaron a responder con estado **404**
+Aproximadamente a las 12:00 AM todas las API's del cluster **production-temp** bajo el dominio **api.vasscl.io** comenzaron a responder con estado **404**
 
 ### Impact
 
