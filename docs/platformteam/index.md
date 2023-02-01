@@ -36,4 +36,4 @@ Combinamos métodos SRE, DevOps y DevSecOps con una sólida formación persisten
 
 Creemos que cada pieza de software que desarrollamos debe venir con estándares de alta calidad y seguridad.
 
-Trabajamos basados en la definición de [Plataformas impulsadas por la comunidad](community-driven-platform.md).
+Trabajamos basados en la definición de [Plataformas impulsadas por la comunidad](../docs/community/index.md)
