@@ -6,7 +6,7 @@ metadata:
   description: This document is a list of collaborative guides where each area describes how they work, their principles, and highlight guidelines.
   annotations:
     backstage.io/techdocs-ref: dir:./
-    github.com/project-slug: Cencosud-X/handbooks
+    github.com/project-slug: vasscl/.github
   tags:
     - documentation
     - guidelines
