@@ -1,1 +1,1 @@
-../docs/platformteam/index.md
+
